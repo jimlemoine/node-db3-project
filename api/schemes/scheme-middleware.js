@@ -8,17 +8,17 @@ const Scheme = require('./scheme-model');
   }
 */
 const checkSchemeId = async (req, res, next) => {
-  try {
-    const possibleScheme = await Scheme.find(req.params.id)
-    if (possibleScheme) {
-      req.scheme = possibleScheme;
-      next();
-    } else {
-      next({ status: 404, message: `scheme with scheme_id ${req.params.id} not found` })
-    }
-  } catch (err) {
-    next(err)
-  }
+  next()
+  // try {
+  //   const possibleScheme = await Scheme.findById(req.params.id)
+  //   if (possibleScheme) {
+  //     next();
+  //   } else {
+  //     next({ status: 404, message: `scheme with scheme_id ${req.params.id} not found` })
+  //   }
+  // } catch (err) {
+  //   next(err)
+  // }
 }
 
 /*

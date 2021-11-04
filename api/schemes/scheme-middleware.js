@@ -1,7 +1,6 @@
 const db = require('../../data/db-config')
 
 const checkSchemeId = async (req, res, next) => {
-  next()
   try {
     const possibleScheme = await db('schemes')
       .where('scheme_id', req.params.scheme_id)
